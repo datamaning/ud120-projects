@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#clf.fit()!/usr/bin/python
 
 """ 
     This is the code to accompany the Lesson 1 (Naive Bayes) mini-project. 
@@ -29,11 +29,19 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 from sklearn.naive_bayes import GaussianNB
 clf=GaussianNB()
-clf.fit(features_train,labels_train)
-pred=clf.predic(labels_test)
 
-score=clf.score(pred,labels_test)
-printf("%d",score)
+t0=time()
+clf.fit(features_train,labels_train)
+print "traning time",round(time()-t0,3),"s"
+
+t1=time()
+pred=clf.predict(features_test)
+print "predict time",round(time()-t1,3),"s"
+
+score=clf.score(features_test,labels_test)
+print("%d",score)
+
+
 
 #########################################################
 
