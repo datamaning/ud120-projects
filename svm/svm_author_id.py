@@ -29,11 +29,11 @@ clf=svm.SVC(kernel='linear')
 
 t1=time()
 clf.fit(features_train,labels_train)
-print 'train time consuming',rount(time()-t1,3),'s'
+print 'train time consuming',round(time()-t1,3),'s'
 
 t0=time()
 pred=clf.predict(features_test)
-print "time consuming",rount(time()-t0,3),'s'
+print "time consuming",round(time()-t0,3),'s'
 
 from sklearn.metrics import accuracy_score
 score=accuracy_score(pred,labels_test)
